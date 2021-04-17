@@ -17,7 +17,7 @@ import matplotlib.pyplot as plt
 xi=np.array([15.992,15.091,15.117,14.771,11.849,10.92,10.087,9.958,8.981])
 fi=np.array([462.11,475.11,533.47,652.65,660.76,658.26,676.23,729.37,722.3])
 
-titulo=['i','xi','fi']
+titulo=['I','X(i)','F(i)']
 n=len(xi)
 ki=np.arange(0,n,1)
 tabla=np.concatenate(([ki],[xi],[fi]))
@@ -60,7 +60,7 @@ polisimple=polinomio.expand()
 
 px=sym.lambdify(x,polisimple)
 
-muestras=101
+muestras=500
 a=np.min(xi)
 b=np.max(xi)
 p_xi=np.linspace(a,b,muestras)
@@ -68,7 +68,7 @@ pfi=px(p_xi)
 
 
 
-np.set_printoptions(precision=3)
+np.set_printoptions(precision=10)
 print('Tabla Diferencia dividida')
 print([titulo])
 print(tabla)
